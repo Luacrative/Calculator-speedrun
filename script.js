@@ -19,7 +19,8 @@ const functionInputs = {
     "/": ["divide", false],
     "5": ["mod", true],
     "c": ["ac", false],
-    "Enter": ["equals", false]
+    "Enter": ["equals", false],
+    "=": ["equals", false]
 }
 
 const functions = { 
