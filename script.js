@@ -4,12 +4,23 @@ const buttons = document.querySelectorAll("button");
 let first = 0;
 let second = 0;
 let writeFirst = true; 
+let operation; 
 
 const functions = { 
-    // TODO: Table for special functions 
+    add: (first, second) => { 
+        return first + second;
+    },
+
+    subtract: (first, second) => { 
+        return first - second;
+    },
+
+    multiply: (first, second) => { 
+        return first * second;
+    }
 }
 
-function showResult(calculated) { 
+function display(calculated) { 
     result.textContent = calculated;
 }
 
@@ -20,15 +31,28 @@ function writeOperand(number, value) {
 function inputOperand(value) { 
     if (writeFirst) { 
         first = writeOperand(first, value); 
-        showResult(first);
+        display(first);
     } else { 
         second = writeOperand(second, value); 
-        showResult(second); 
+        display(second); 
     }
 }
 
 function inputOperation(input) { 
+    if (writeFirst) { 
+        writeFirst = false; 
+    } else { 
+        if (operation) { 
+            first = functions[operation](first, first); 
+        } else { 
+            first = functions[operation](first, second);
+        }
 
+        second = 0; 
+        display(first);
+    }
+
+    operation = input;
 }
 
 buttons.forEach((button) => { 
