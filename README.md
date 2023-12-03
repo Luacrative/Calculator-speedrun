@@ -15,6 +15,10 @@ Started at `9:00 PM December 12th, 2023 (PST)`
 `10:00 PM`: 
 Finished basic functionality, but still missing keyboard support. Going to extend the speedrun.
 
+`10:30 PM`:
+Added keyboard support and refactored most of the code. Calling it here for the sake of this speedrun!
+
+Completed in 1.5 hours total. 
 
 ## Getting Started
 
