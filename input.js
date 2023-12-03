@@ -6,7 +6,8 @@ document.body.addEventListener("keydown", (input) => {
     else if (input.key === "Shift")
         holdingShift = true;
     else if (input.key in operatorInputs) { 
-        if (operatorInputs[input.key][1] && !holdingShift) return;
+        // Check if holdingShift matches the input's shift requirement
+        if (operatorInputs[input.key][1] && !holdingShift) return; 
 
         inputOperation(operatorInputs[input.key][0]);
     }
