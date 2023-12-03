@@ -6,3 +6,25 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+#calculator { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border-radius: 35px;
+    padding-bottom: 22px;
+    padding-top: 90px;
+    gap: 2px;
+    background-color: black;
+    border: 3px solid;
+}
+
+#result { 
+    text-align: right;
+    align-self: flex-end;
+    margin-right: 25px;
+    font-size: 40px;
+    font-weight: 450;
+    color: white;
+}
