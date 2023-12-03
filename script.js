@@ -112,7 +112,7 @@ buttons.forEach((button) => {
     else if (button.classList.contains("function")) 
         button.addEventListener("click", () => inputOperation(button.id));
     else if (button.classList.contains("operand")) {
-        const value = parseInt(button.value);
+        const value = operandInputs[button.textContent];
         button.addEventListener("click", () => inputOperand(value));
     } 
 });
