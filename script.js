@@ -71,6 +71,17 @@ function isFloat(number) {
     return (number * 10) % 10 != 0;
 }
 
+function getDigits(number) { 
+    let digits = 0; 
+
+    while (number > 0) {
+        number = Math.floor(number / 10);
+        digits++;
+    }
+
+    return digits; 
+}
+
 function setOperand(number, value) { 
     if (float) { 
         let base = 1; 
@@ -91,6 +102,8 @@ function setOperand(number, value) {
 }
 
 function inputOperand(value) { 
+    if (getDigits(first) == 9 || getDigits(second) == 9) return;
+
     writeOperand = true;
 
     if (writeFirst) { 
