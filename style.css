@@ -53,6 +53,12 @@ button {
     text-align: center;
 }
 
+
+#top button { 
+    background-color: rgb(225, 225, 225);
+    color: black;
+}
+
 .function { 
     background-color: orange;
 }
