@@ -12,8 +12,8 @@ A simple HTML5 calculator created as a speedrun project for coding practice. The
 
 Started at `9:00 PM December 12th, 2023 (PST)`
 
-
-Let's see when I finish!
+`10:00 PM`: 
+Finished basic functionality, but still missing keyboard support. Going to extend the speedrun.
 
 
 ## Getting Started
