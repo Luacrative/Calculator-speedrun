@@ -40,10 +40,10 @@ const functions = {
     equals: (first) => first
 }
 
-const display = (calculated) => {result.textContent = truncate(calculated, 12)};
+const display = calculated => {result.textContent = truncate(calculated, MAX_DIGITS)};
 const truncate = (number, base) => Math.round(number * Math.pow(10, base)) / Math.pow(10, base);
-const isFloat = (number) => (number * 10) % 10 != 0;
-const getDigits = (number) => { 
+const isFloat = number => (number * 10) % 10 != 0;
+const getDigits = number => { 
     let digits = 0; 
 
     while (number > 0) {
@@ -72,8 +72,8 @@ const setOperand = (number, value) => {
     return (number * 10) + value;
 }
 
-const inputOperand = (value) => { 
-    if (getDigits(first) == 9 || getDigits(second) == 9) return;
+const inputOperand = value => { 
+    if (getDigits(first) == MAX_DIGITS || getDigits(second) == MAX_DIGITS) return;
 
     writeOperand = true;
 
@@ -86,16 +86,15 @@ const inputOperand = (value) => {
     }
 }
 
-const inputOperation = (input) => { 
-    const flag = writeOperand;
+const inputOperation = input => { 
+    const wroteOperand = writeOperand;
 
     writeOperand = false; 
-    float = false;
 
     if (writeFirst) 
         writeFirst = false; 
     else { 
-        if (operation && (!flag)) 
+        if (operation && (!wroteOperand)) 
             first = functions[operation](first, first); 
         else 
             first = functions[operation](first, second);
