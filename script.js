@@ -44,6 +44,10 @@ const functions = {
 
     multiply: (first, second) => { 
         return first * second;
+    },
+
+    equals: (first, second) => { 
+        return first;
     }
 }
 
@@ -55,9 +59,22 @@ function truncate(number, base) {
     return Math.round(number * Math.pow(10, base)) / Math.pow(10, base);
 }
 
+function isFloat(number) { 
+    return (number * 10) % 10 != 0;
+}
+
 function setOperand(number, value) { 
     if (float) { 
         let base = 1; 
+
+        while (isFloat(number)) { 
+            number *= 10; 
+            base++; 
+        }
+
+        if (value == 0) { 
+            return truncate(number / Math.pow(10, base - 1), base); 
+        } 
 
         return truncate(((number * 10) + value) / Math.pow(10, base), base);
     }
