@@ -53,14 +53,25 @@ button {
     text-align: center;
 }
 
+button:hover { 
+    background-color: rgb(100, 100, 100);
+}
 
 #top button { 
     background-color: rgb(225, 225, 225);
     color: black;
 }
 
+#top button:hover { 
+    background-color: rgb(200, 200, 200);
+}
+
 .function { 
     background-color: orange;
+}
+
+.function:hover { 
+    background-color: rgb(200, 130, 0);
 }
 
 #zero { 
