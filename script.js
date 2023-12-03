@@ -4,6 +4,7 @@ const buttons = document.querySelectorAll("button");
 let first = 0;
 let second = 0;
 let writeFirst = true; 
+let writeOperand = false;
 let operation; 
 
 const functions = { 
@@ -24,25 +25,31 @@ function display(calculated) {
     result.textContent = calculated;
 }
 
-function writeOperand(number, value) { 
+function setOperand(number, value) { 
     return (number * 10) + value;
 }
 
 function inputOperand(value) { 
+    writeOperand = true;
+
     if (writeFirst) { 
-        first = writeOperand(first, value); 
+        first = setOperand(first, value); 
         display(first);
     } else { 
-        second = writeOperand(second, value); 
+        second = setOperand(second, value); 
         display(second); 
     }
 }
 
 function inputOperation(input) { 
+    const flag = writeOperand;
+
+    writeOperand = false; 
+
     if (writeFirst) { 
         writeFirst = false; 
     } else { 
-        if (operation) { 
+        if (operation && (!flag)) { 
             first = functions[operation](first, first); 
         } else { 
             first = functions[operation](first, second);
