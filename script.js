@@ -3,6 +3,7 @@ const buttons = document.querySelectorAll("button");
 
 let first = 0;
 let second = 0;
+let float = false;
 let writeFirst = true; 
 let writeOperand = false;
 let operation; 
@@ -11,7 +12,9 @@ const functions = {
     ac: () => { 
         first = 0; 
         second = 0; 
+        float = false; 
         writeFirst = true; 
+        writeOperand = false;
         operation = undefined; 
 
         display(0); // Hoisted
@@ -25,6 +28,10 @@ const functions = {
             second *= -1; 
             display(second);
         }
+    },
+
+    float: () => { 
+        float = true;
     },
 
     add: (first, second) => { 
@@ -44,7 +51,17 @@ function display(calculated) {
     result.textContent = calculated;
 }
 
+function truncate(number, base) { 
+    return Math.round(number * Math.pow(10, base)) / Math.pow(10, base);
+}
+
 function setOperand(number, value) { 
+    if (float) { 
+        let base = 1; 
+
+        return truncate(((number * 10) + value) / Math.pow(10, base), base);
+    }
+
     return (number * 10) + value;
 }
 
@@ -64,6 +81,7 @@ function inputOperation(input) {
     const flag = writeOperand;
 
     writeOperand = false; 
+    float = false;
 
     if (writeFirst) { 
         writeFirst = false; 
