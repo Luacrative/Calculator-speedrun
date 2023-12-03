@@ -1,16 +1,34 @@
 const result = document.querySelector("#result");
 const buttons = document.querySelectorAll("button");
 
+let first = 0;
+let second = 0;
+let writeFirst = true; 
+
 const functions = { 
     // TODO: Table for special functions 
 }
 
-function inputOperand(value) { 
-
+function showResult(calculated) { 
+    result.textContent = calculated;
 }
 
-function inputoperation(input) { 
-    
+function writeOperand(number, value) { 
+    return (number * 10) + value;
+}
+
+function inputOperand(value) { 
+    if (writeFirst) { 
+        first = writeOperand(first, value); 
+        showResult(first);
+    } else { 
+        second = writeOperand(second, value); 
+        showResult(second); 
+    }
+}
+
+function inputOperation(input) { 
+
 }
 
 buttons.forEach((button) => { 
