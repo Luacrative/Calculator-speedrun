@@ -17,7 +17,7 @@ const functions = {
         writeOperand = false;
         operation = undefined; 
 
-        display(0); // Hoisted
+        display(0); 
     },
     
     sign: () => { 
@@ -40,19 +40,10 @@ const functions = {
     equals: (first) => first
 }
 
-function display(calculated) { 
-    result.textContent = truncate(calculated, 12);
-}
-
-function truncate(number, base) { 
-    return Math.round(number * Math.pow(10, base)) / Math.pow(10, base);
-}
-
-function isFloat(number) { 
-    return (number * 10) % 10 != 0;
-}
-
-function getDigits(number) { 
+const display = (calculated) => {result.textContent = truncate(calculated, 12)};
+const truncate = (number, base) => Math.round(number * Math.pow(10, base)) / Math.pow(10, base);
+const isFloat = (number) => (number * 10) % 10 != 0;
+const getDigits = (number) => { 
     let digits = 0; 
 
     while (number > 0) {
@@ -63,7 +54,7 @@ function getDigits(number) {
     return digits; 
 }
 
-function setOperand(number, value) { 
+const setOperand = (number, value) => { 
     if (float) { 
         let base = 1; 
 
@@ -81,7 +72,7 @@ function setOperand(number, value) {
     return (number * 10) + value;
 }
 
-function inputOperand(value) { 
+const inputOperand = (value) => { 
     if (getDigits(first) == 9 || getDigits(second) == 9) return;
 
     writeOperand = true;
@@ -95,7 +86,7 @@ function inputOperand(value) {
     }
 }
 
-function inputOperation(input) { 
+const inputOperation = (input) => { 
     const flag = writeOperand;
 
     writeOperand = false; 
