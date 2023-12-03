@@ -8,7 +8,19 @@ let writeFirst = true;
 let writeOperand = false;
 let operation; 
 
+let shift = false;
 const numberInputs = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9}
+
+const functionInputs = { 
+    ".": "float",
+    "-": "subtract",
+    "+": "add", 
+    "8": "multiply",
+    "/": "divide",
+    "5": "mod",
+    "c": "ac",
+    "Enter": "equals"
+}
 
 const functions = { 
     ac: () => { 
@@ -130,8 +142,12 @@ buttons.forEach((button) => {
 });
 
 document.body.addEventListener("keydown", (input) => { 
-    if (numberInputs.hasOwnProperty(input.key)) 
+    if (input.key in numberInputs) 
         inputOperand(numberInputs[input.key]);
+    else if (input.key === "Shift")
+        shift = true;
+    else if ((input.key in functionInputs) && shift)
+        inputOperation(functionInputs[input.key]);
 });
 
 result.textContent = "0";
