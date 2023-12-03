@@ -17,6 +17,16 @@ const functions = {
         display(0); // Hoisted
     },
     
+    sign: () => { 
+        if (writeFirst || (!writeOperand)) { 
+            first *= -1; 
+            display(first); 
+        } else { 
+            second *= -1; 
+            display(second);
+        }
+    },
+
     add: (first, second) => { 
         return first + second;
     },
