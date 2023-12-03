@@ -1,0 +1,85 @@
+body { 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: lightblue;
+}
+
+#calculator { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    
+    width: 345px;
+    padding-bottom: 20px;
+    padding-top: 95px;
+    
+    background-color: black;
+    border: 3px solid silver;
+    border-radius: 40px;
+}
+
+#output { 
+    padding: 0px;
+    margin: 0px;
+}
+
+#result { 
+    text-align: right;
+    align-self: flex-end;
+    
+    margin-right: 25px;
+    
+    color: white;
+    font-size: 40px;
+    font-weight: 450;
+}
+
+button { 
+    width: 75px;
+    height: 75px;
+    padding: 10px 10px;
+    
+    background-color: rgb(80, 80, 80);
+    border: 0px solid;
+    border-radius: 35px;
+    
+    color: white;
+    font-size: 22px;
+    font-weight: 550;
+    text-align: center;
+
+    transition: 0.5s ease-out;
+}
+
+button:hover { 
+    background-color: rgb(100, 100, 100);
+}
+
+#top button { 
+    background-color: rgb(225, 225, 225);
+    color: black;
+}
+
+#top button:hover { 
+    background-color: rgb(200, 200, 200);
+}
+
+.function { 
+    background-color: orange;
+}
+
+.function:hover { 
+    background-color: rgb(200, 130, 0);
+}
+
+#zero { 
+    width: 155px;
+    padding-left: 30px;
+    text-align: left;
+}
