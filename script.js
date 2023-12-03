@@ -46,6 +46,14 @@ const functions = {
         return first * second;
     },
 
+    divide: (first, second) => { 
+        return first / second;
+    },
+
+    mod: (first, second) => {
+        return first % second;
+    },
+
     equals: (first, second) => { 
         return first;
     }
