@@ -10,7 +10,7 @@ A simple HTML5 calculator created as a speedrun project for coding practice. The
 
 ## Timeline
 
-Started at `9:00 PM December 12th, 2023 (PST)`
+Started at `9:00 PM December 2nd, 2023 (PST)`
 
 `10:00 PM`: 
 Finished basic functionality, but still missing keyboard support. Going to extend the speedrun.
