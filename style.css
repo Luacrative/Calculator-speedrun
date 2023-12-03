@@ -22,6 +22,11 @@ body {
     border-radius: 40px;
 }
 
+#output { 
+    padding: 0px;
+    margin: 0px;
+}
+
 #result { 
     text-align: right;
     align-self: flex-end;
@@ -53,7 +58,7 @@ button {
 }
 
 #zero { 
-    text-align: left;
-    padding-left: 30px;
     width: 155px;
+    padding-left: 30px;
+    text-align: left;
 }
