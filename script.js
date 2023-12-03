@@ -8,6 +8,15 @@ let writeOperand = false;
 let operation; 
 
 const functions = { 
+    ac: () => { 
+        first = 0; 
+        second = 0; 
+        writeFirst = true; 
+        operation = undefined; 
+
+        display(0); // Hoisted
+    },
+    
     add: (first, second) => { 
         return first + second;
     },
@@ -72,3 +81,5 @@ buttons.forEach((button) => {
         button.addEventListener("click", () => inputOperand(value));
     } 
 });
+
+result.textContent = "0";
