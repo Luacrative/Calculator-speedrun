@@ -30,37 +30,18 @@ const functions = {
         }
     },
 
-    float: () => { 
-        float = true;
-    },
+    float: () => float = true,
 
-    add: (first, second) => { 
-        return first + second;
-    },
-
-    subtract: (first, second) => { 
-        return first - second;
-    },
-
-    multiply: (first, second) => { 
-        return first * second;
-    },
-
-    divide: (first, second) => { 
-        return first / second;
-    },
-
-    mod: (first, second) => {
-        return first % second;
-    },
-
-    equals: (first, second) => { 
-        return first;
-    }
+    add: (first, second) => first + second, 
+    subtract: (first, second) => first - second, 
+    multiply: (first, second) => first * second,
+    divide: (first, second) => first / second,
+    mod: (first, second) => first % second,
+    equals: (first) => first
 }
 
 function display(calculated) { 
-    result.textContent = calculated;
+    result.textContent = truncate(calculated, 12);
 }
 
 function truncate(number, base) { 
@@ -91,11 +72,10 @@ function setOperand(number, value) {
             base++; 
         }
 
-        if (value == 0) { 
+        if (value == 0)  
             return truncate(number / Math.pow(10, base - 1), base); 
-        } 
-
-        return truncate(((number * 10) + value) / Math.pow(10, base), base);
+        else 
+            return truncate(((number * 10) + value) / Math.pow(10, base), base);
     }
 
     return (number * 10) + value;
@@ -121,14 +101,13 @@ function inputOperation(input) {
     writeOperand = false; 
     float = false;
 
-    if (writeFirst) { 
+    if (writeFirst) 
         writeFirst = false; 
-    } else { 
-        if (operation && (!flag)) { 
+    else { 
+        if (operation && (!flag)) 
             first = functions[operation](first, first); 
-        } else { 
+        else 
             first = functions[operation](first, second);
-        }
 
         second = 0; 
         display(first);
@@ -138,11 +117,11 @@ function inputOperation(input) {
 }
 
 buttons.forEach((button) => { 
-  if (button.classList.contains("special-function")) { 
+    if (button.classList.contains("special-function")) 
         button.addEventListener("click", () => functions[button.id]());
-    } else if (button.classList.contains("function")) { 
+    else if (button.classList.contains("function")) 
         button.addEventListener("click", () => inputOperation(button.id));
-    } else if (button.classList.contains("operand")) {
+    else if (button.classList.contains("operand")) {
         const value = parseInt(button.value);
         button.addEventListener("click", () => inputOperand(value));
     } 
