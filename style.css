@@ -11,20 +11,39 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
-    border-radius: 35px;
-    padding-bottom: 22px;
-    padding-top: 90px;
-    gap: 2px;
+    gap: 8px;
+    
+    width: 345px;
+    padding-bottom: 20px;
+    padding-top: 95px;
+    
     background-color: black;
-    border: 3px solid;
+    border: 3px solid silver;
+    border-radius: 40px;
 }
 
 #result { 
     text-align: right;
     align-self: flex-end;
+    
     margin-right: 25px;
+    
+    color: white;
     font-size: 40px;
     font-weight: 450;
+}
+
+button { 
+    width: 75px;
+    height: 75px;
+    padding: 10px 10px;
+    
+    background-color: rgb(80, 80, 80);
+    border: 0px solid;
+    border-radius: 30px;
+    
     color: white;
+    font-size: 22px;
+    font-weight: 550;
+    text-align: center;
 }
