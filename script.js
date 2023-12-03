@@ -8,6 +8,8 @@ let writeFirst = true;
 let writeOperand = false;
 let operation; 
 
+const numberInputs = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9}
+
 const functions = { 
     ac: () => { 
         first = 0; 
@@ -125,6 +127,11 @@ buttons.forEach((button) => {
         const value = parseInt(button.value);
         button.addEventListener("click", () => inputOperand(value));
     } 
+});
+
+document.body.addEventListener("keydown", (input) => { 
+    if (numberInputs.hasOwnProperty(input.key)) 
+        inputOperand(numberInputs[input.key]);
 });
 
 result.textContent = "0";
