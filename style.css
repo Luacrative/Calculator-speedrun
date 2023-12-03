@@ -5,6 +5,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: lightblue;
 }
 
 #calculator { 
@@ -51,6 +53,8 @@ button {
     font-size: 22px;
     font-weight: 550;
     text-align: center;
+
+    transition: 0.5s ease-out;
 }
 
 button:hover { 
