@@ -18,13 +18,4 @@ Finished basic functionality, but still missing keyboard support. Going to exten
 `10:30 PM`:
 Added keyboard support and refactored most of the code. Calling it here for the sake of this speedrun!
 
-Completed in 1.5 hours total. 
-
-## Getting Started
-
-To view the calculator, open the `index.html` file in a web browser.
-
-```bash
-git clone https://github.com/Luacrative/Calculator
-cd calculator-speedrun
-open index.html
+Completed in 1.5 hours total.
